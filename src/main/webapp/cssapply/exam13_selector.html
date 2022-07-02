@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>선택자</title>
+		<style type="text/css">
+			.blink:hover{
+				font-weight:bold;
+				color: green;
+			}
+			#col_green{color:green;}
+			#one_pick{color:red;}
+			ul#change_img li{list-style:circle url("../image/icon.png") outside;} /*circle은 이미지가 잘 안떴을때 동그라미로*/
+		</style>
+	</head>
+	<body>
+		<p><h5>**여행하고 싶은 나라**</h5></p>
+		<hr/>
+		<p>
+			<ol>
+				<li class="blink">중국</li>
+				<li class="blink">일본</li>
+				<li class="blink">미국</li>
+				<li class="blink">호주</li>
+			</ol>
+		</p>
+		
+		<p><h5>**여행하고 싶은 섬**</h5></p>
+		<hr/>
+		<p>
+			<ol id="col_green">
+				<li>제주도</li>
+				<li>하와이</li>
+				<li>오키나와</li>
+				<li>발리</li>
+			</ol>
+		</p>
+		<p><h5>**좋아하는 음식**</h5></p><hr/>
+		<p>
+			<ul id="change_img" >
+				<li id="one_pick">짬뽕</li>
+				<li>삼겹살</li>
+				<li>추어탕</li>
+			</ul>
+		
+		</p>
+		
+	</body>
+</html>

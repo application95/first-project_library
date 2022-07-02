@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	
+		<title>Insert title here</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />-->
+	
+		<title>Insert title here</title>
+	
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		<link rel="stylesheet" type="text/css" href="../css/origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/video.css"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/origin.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			
+			$(".tabs li").click(function(){
+				let tab_id = $(this).attr("data-tab");
+
+				$(".tabs li").removeClass("current");
+				$(".tab-content").removeClass("current");
+
+				$(this).addClass("current");
+				$("#"+tab_id).addClass("current");
+			});
+
+		});
+		
+		</script>
+	</head>
+	<body>
+		<header>
+			<div id="main_img">
+			</div>
+			<nav>
+				<ul id="nav">
+					<li class="home"><a href="origin.html">홈</a></li>
+					<li class="dropdown">
+						<a href="" class="dropbtn">독서정보</a>
+						<div class="dropdown-content">
+							<a href="book.html">소장도서</a>
+							<a href="#">도서대출베스트</a>
+						</div>	
+					</li>
+					
+					<li class="dropdown">
+						<a href="">문화행사</a>
+						<div class="dropdown-content">
+							<a href="video.html">영화상영</a>
+							<a href="lecture.html">강좌정보</a>
+					</div>
+					</li>
+					<li class="dropdown">
+					<a href="">도서관 소개</a>
+						<div class="dropdown-content">
+							<a href="place.html">찾아오시는길</a>
+						</div>
+					
+					</li>
+					<li class="dropdown">
+					<a href="">마이페이지</a>
+						<div class="dropdown-content">
+							<a href="#" class="login">로그인</a>
+							<a href="#" id="info">내 정보</a>
+						</div>
+					
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+			<article>
+			<ul class="tabs">
+				<li class="tab-link current" data-tab="tab-1">멀티미디어실1<br/>----★-----</li>
+				<li class="tab-link" data-tab="tab-2">멀티미디어실2<br/>----★★-----</li>
+				<li class="tab-link" data-tab="tab-3">어린이 멀티미디어실<br/>------★★★------</li>
+				<li> ◁◁미디어실 눌러서 확인◁◁ </li>
+			</ul>
+
+			<div id="tab-1" class="tab-content current">
+				<div class="movie_name">첫째 주~ 둘째 주: 올드<br/><br/>
+				</div>
+					<iframe width="800" height="500" src="https://www.youtube.com/embed/Pw38yorbYe4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<br/><br/>
+				<div class="movie_name">셋째 주~ 넷째 주: 테넷<br/><br/>
+				</div>
+					<iframe width="800" height="500" src="https://www.youtube.com/embed/Pgk9EFPkR9E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<br/><br/>
+			</div>
+			<div id="tab-2" class="tab-content">
+				<div class="movie_name">첫째 주~ 둘째 주: 도굴<br/><br/>
+				</div>
+					<iframe width="800" height="500" src="https://www.youtube.com/embed/HHXyQiCGgKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<br/><br/>
+				<div class="movie_name">셋째 주~ 넷째 주: 극한직업<br/><br/></div>
+					<iframe width="800" height="500" src="https://www.youtube.com/embed/BaIRaKXrLPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<br/><br/>
+				</div>
+			<div id="tab-3" class="tab-content">
+			
+				<div class="movie_name">첫째 주~ 둘째 주: 소울<br/><br/></div><br/>
+					<iframe width="800" height="500" src="https://www.youtube.com/embed/Q0zFPlArth0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<br/><br/>
+				<div class="movie_name">셋째 주~ 넷째 주: 인사이드아웃<br/><br/></div>
+					<iframe width="800" height="500" src="https://www.youtube.com/embed/1KGZtWbZtq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<br/><br/>
+			</div>
+				
+			</article>
+		</section>
+		<footer>
+			<div id="logo"><img src="../image/kh.png"></div>
+			<div id="kh">kh도서관 서울특별시 강남구 테헤란로14길 6 남도빌딩 4층 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   전화번호:1544-9970<br/>
+				Copyright 2022.Kh Library All Rights Reserved.
+			 </div>
+		</footer>
+	</body>
+	</body>
+</html>

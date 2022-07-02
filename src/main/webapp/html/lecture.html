@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	
+		<title>Insert title here</title>
+	
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		<link rel="stylesheet" type="text/css" href="../css/origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/book.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/lecture.css"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+		<style type="text/css">
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/origin.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.get("../json/lecture.json",function(data){
+					let title=data.DESCRIPTION.TITLE;
+					let status_name=data.DESCRIPTION.STATUS_NAME;
+					let person=data.DESCRIPTION.PERSON;
+					let term_start_time=data.DESCRIPTION.TERM_START_TIME;
+					let place=data.DESCRIPTION.PLACE;
+					
+					
+					let th1=$("<th>").html(title);
+					let th2=$("<th>").html(status_name);
+					let th3=$("<th>").html(person);
+					let th4=$("<th>").html(term_start_time);
+					let th5=$("<th>").html(place);
+					let tr=$("<tr class='title'>").append(th1).append(th2).append(th3).append(th4).append(th5);
+					$(".table").append(tr);
+					
+					let lecture=data.DATA
+					for(let i=0; i<lecture.length; i++){
+						let title2=lecture[i].title;
+						let status_name2=lecture[i].status_name;
+						let person2=lecture[i].person;
+						let term_start_time2=lecture[i].term_start_time;
+						let place2=lecture[i].place;
+						
+						let th1=$("<td>").html(title2);
+						let th2=$("<td>").html(status_name2);
+						let th3=$("<td>").html(person2);
+						let th4=$("<td>").html(term_start_time2);
+						let th5=$("<td>").html(place2);
+						let tr2=$("<tr>").append(th1).append(th2).append(th3).append(th4).append(th5);
+						$(".table").append(tr2);
+					}
+				}).fail(function(xhr,status,errorThrown){
+					$("#book").html("오류 발생: "+errorThrown+":"+xhr.status+"/"+status);
+				});
+				
+			});
+		</script>
+		
+		
+	</head>
+	<body>
+		<div id="container">
+		<header>
+			<div id="main_img">
+			</div>
+			<nav>
+				<ul id="nav">
+					<li class="home"><a href="origin.html">홈</a></li>
+					<li class="dropdown">
+						<a href="" class="dropbtn">독서정보</a>
+						<div class="dropdown-content">
+							<a href="book.html">소장도서</a>
+							<a href="best.html">도서대출베스트</a>
+						</div>	
+					</li>
+					
+					<li class="dropdown">
+						<a href="">문화행사</a>
+						<div class="dropdown-content">
+							<a href="video.html">영화상영</a>
+							<a href="lecture.html">강좌정보</a>
+					</div>
+					</li>
+					<li class="dropdown">
+					<a href="">도서관 소개</a>
+						<div class="dropdown-content">
+							<a href="place.html">찾아오시는길</a>
+						</div>
+					
+					</li>
+					<li class="dropdown">
+					<a href="">마이페이지</a>
+						<div class="dropdown-content">
+							<a href="#" class="login">로그인</a>
+							<a href="#" id="info">내 정보</a>
+						</div>
+					
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+			<article id="one">
+				<div id="guide">
+					<span class="guide_name">강좌정보<br/></span>
+					<span><img src="../image/book_home.png"/>>문화행사>강좌정보</span>
+				</div>
+				<p id="guide2">
+					전화 접수 또는 방문 접수
+				</p>
+				<div id="guide3">
+				</div>
+				
+				
+			</article>
+			<article id="two">
+				<h1>강좌 정보</h1>
+				<div id="lecture">
+					<table class="table">
+					</table>
+				</div>
+				
+			</article>
+		</section>
+		<footer>
+			<div id="logo"><img src="../image/kh.png"></div>
+			<div id="kh">kh도서관 서울특별시 강남구 테헤란로14길 6 남도빌딩 4층 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   전화번호:1544-9970<br/>
+				Copyright 2022.Kh Library All Rights Reserved.
+			 </div>
+		</footer>
+		</div>
+	</body>
+</html>

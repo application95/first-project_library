@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />-->
+	
+		<title>Insert title here</title>
+	
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		<link rel="stylesheet" type="text/css" href="../css/origin2.css"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../css/home.css"/>
+		<style type="text/css">
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/coin-slider.min.js"></script>
+		<script type="text/javascript" src="../js/origin.js"></script>
+		<link rel="stylesheet" href="../css/coin-slider-styles.css" type="text/css" />
+		
+		<script type="text/javascript">
+			$(window).scroll(function(){
+			    $(".top").css("opacity", 1 - $(window).scrollTop() / 250);
+			  });
+			
+			$(document).ready(function() {
+		        $('#coin-slider').coinslider({ navigation: false, delay: 2000, hoverPause: true ,
+		        	width: 565, // width of slider panel
+		        	height: 260, // height of slider panel	
+		        	
+		        });
+		    });
+		
+		</script>
+	</head>
+	<body>
+	
+		<header>
+			<div id="main_img">
+			</div>
+			<nav>
+				<ul id="nav">
+					<li class="home"><a href="origin.html">홈</a></li>
+					<li class="dropdown">
+						<a href="" class="dropbtn">독서정보</a>
+						<div class="dropdown-content">
+							<a href="book.html">소장도서</a>
+							<a href="best.html">도서대출베스트</a>
+						</div>	
+					</li>
+					
+					<li class="dropdown">
+						<a href="">문화행사</a>
+						<div class="dropdown-content">
+							<a href="video.html">영화상영</a>
+							<a href="lecture.html">강좌정보</a>
+					</div>
+					</li>
+					<li class="dropdown">
+					<a href="">도서관 소개</a>
+						<div class="dropdown-content">
+							<a href="place.html">찾아오시는길</a>
+						</div>
+					
+					</li>
+					<li class="dropdown">
+					<a href="">마이페이지</a>
+						<div class="dropdown-content">
+							<a href="#" class="login">로그인</a>
+							<a href="#" id="info">내 정보</a>
+						</div>
+					
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="top"><div class="title"><span></span></div></div>
+		<section>
+			<article id="one">
+			<h1>대출 베스트 TOP3</h1>
+			   <div id='coin-slider'>
+				    <a href="http://store.seoul.go.kr/images/goods/12056_imgl.jpg" target="_blank">
+				        <img src="http://store.seoul.go.kr/images/goods/12056_imgl.jpg" >
+				        <span>
+				           1위. 2019 보건환경백서<br/>
+				          
+				        </span>
+				    </a>
+				    <a href="http://store.seoul.go.kr/images/goods/11936_imgl.jpg">
+				        <img src="http://store.seoul.go.kr/images/goods/11936_imgl.jpg" >
+				        <span>
+				           2위.BANPOBON-DONG(반포본동)<br/> 
+				           
+				        </span>
+				    </a>
+				    <a href="http://store.seoul.go.kr/images/goods/11916_imgl.jpg">
+				        <img src="http://store.seoul.go.kr/images/goods/11916_imgl.jpg" >
+				        <span>
+				           3위.앵커-서울역 일대 도시재생공간 8 )<br/> 
+				           
+				        </span>
+				    </a>
+				</div>
+			</article>
+			<article id="two">
+				<h1>kh도서관 위치</h1>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.383612005067!2d127.03167518083512!3d37.49886955755995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9ec255555555%3A0x3565475c3365c5bb!2zS0jsoJXrs7TqtZDsnKHsm5A!5e0!3m2!1sko!2skr!4v1654059137581!5m2!1sko!2skr" width="300" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</article>
+			<article id="three">
+				<div>
+					<h1>회원 로그인</h1>
+					로그인을 하시면<br/> 
+					더욱 편리하게 이용하실 수 있습니다<br/>
+					<input type="button" id="login2" name="login2" class="login" value="로그인"/><br/>
+					<input type="button" id="new" name="new" value="회원가입" />
+					
+				</div>
+			</article>
+			<article id="four">
+				<div class="icon1">
+					<a href="book.html"><img class="icon" src="../image/origin_book_icon.png"><br/>
+					<h4>소장도서</h4>
+					</a>
+					
+				</div>
+				<div class="icon1">
+					<a href="best.html"><img  class="icon" src="../image/origin_best_icon.png"><br/>
+					<h4>도서대출베스트</h4>
+					</a>
+					
+				</div>
+				<div class="icon1">
+					<a href="video.html"><img class="icon" src="../image/origin_movie_icon.png"><br/>
+					<h4>영화상영</h4>
+					</a>
+				</div>
+				<div class="icon1">
+					<a href="lecture.html"><img class="icon" src="../image/origin_lecture_icon.png"><br/>
+					<h4>강좌정보</h4>
+					</a>
+				</div>
+				<div class="icon1">
+					<a href="place.html"><img class="icon" src="../image/origin_doseogwan_icon.png"><br/>
+					<h4>도서관소개</h4>
+					</a>
+					
+				</div>
+			</article>
+		</section>
+		<footer>
+			<div id="logo"><img src="../image/kh.png"></div>
+			<div id="kh">kh도서관 서울특별시 강남구 테헤란로14길 6 남도빌딩 4층 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   전화번호:1544-9970<br/>
+				Copyright 2022.Kh Library All Rights Reserved.
+			 </div>
+		</footer>
+	</body>
+</html>

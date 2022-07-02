@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />-->
+	
+		<title>Insert title here</title>
+	
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+		
+		
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/lightbox.js"></script>
+		
+		<style type="text/css">
+		</style>
+		
+		<link rel="stylesheet" type="text/css" href="../css/lightbox.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/origin.css"/>	
+		<link rel="stylesheet" type="text/css" href="../css/best.css"/>
+		<script type="text/javascript" src="../js/origin.js"></script>
+		<script type="text/javascript">
+		function template(img_url,name,description){
+			let $ul = $("#list") //객체에 ul 담기.
+            //아래는 li 만든것을 복제하기
+            let $element = $("#best_li").clone().removeAttr('id'); 
+            //복제했을때 중복된 id 삭제하기(id 중복 불가.)
+            $element.find('.best_img > a').attr({"href":img_url,"title":description});
+            $element.find('.best_img>a>img').attr({"src":img_url,"max-width":800,"max-height":800});
+            $element.find('.best_name').html(name);
+            $ul.append($element); //ul태크에 복제한 것을 계속 출력하겠다
+			
+			
+		}
+		
+		
+		$(function(){
+			$.get("../json/best.json",function(data){
+				let book=data.DATA;
+				for(let i=0; i<book.length; i++){
+					let img_url=book[i].img_url;
+					let part=book[i].part_name;
+					let name=book[i].g_name;
+					let publisher=book[i].g_maker;
+					let date=book[i].public_year;
+					let description=book[i].g_simple;
+					
+					
+					template(img_url,name,description);
+				}
+			}).fail(function(xhr,status,errorThrown){
+				$("#list").html("오류 발생: "+errorThrown+":"+xhr.status+"/"+status);
+			});
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<header>
+			<div id="main_img">
+			</div>
+			<nav>
+				<ul id="nav">
+					<li class="home"><a href="origin.html">홈</a></li>
+					<li class="dropdown">
+						<a href="" class="dropbtn">독서정보</a>
+						<div class="dropdown-content">
+							<a href="book.html">소장도서</a>
+							<a href="best.html">도서대출베스트</a>
+						</div>	
+					</li>
+					
+					<li class="dropdown">
+						<a href="">문화행사</a>
+						<div class="dropdown-content">
+							<a href="video.html">영화상영</a>
+							<a href="lecture.html">강좌정보</a>
+					</div>
+					</li>
+					<li class="dropdown">
+					<a href="">도서관 소개</a>
+						<div class="dropdown-content">
+							<a href="place.html">찾아오시는길</a>
+						</div>
+					
+					</li>
+					<li class="dropdown">
+					<a href="">마이페이지</a>
+						<div class="dropdown-content">
+							<a href="#" class="login">로그인</a>
+							<a href="#" id="info">내 정보</a>
+						</div>
+					
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+		<article id="one">
+				<div id="guide">
+					<span class="guide_name">도서대출베스트<br/></span>
+					<span><img src="../image/book_home.png"/>>독서정보>도서대출베스트</span>
+				</div>
+				<p id="guide2">
+					책에 대한 간략한 내용은 책을 클릭해서 확인해 주세요.
+				</p>
+				
+				
+			</article>
+			<article id="two">
+			<h1>이번달 대출 베스트 9권</h1>
+				<ul id="list">
+					<li id="best_li" class="best_li">
+						<span class="best_img"><a data-lightbox="roadtrip"><img/></a></span>
+						<span class="best_name"></span>
+					</li>
+				</ul>
+			</article>
+		</section>
+		<footer>
+			<div id="logo"><img src="../image/kh.png"></div>
+			<div id="kh">kh도서관 서울특별시 강남구 테헤란로14길 6 남도빌딩 4층 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   전화번호:1544-9970<br/>
+				Copyright 2022.Kh Library All Rights Reserved.
+			 </div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>display-블록과 인라인</title>
+		 <style type="text/css">
+		span{width: 100px; height:100px;
+			/*display:none; /*화면과 공간 모두 없어짐*/
+			/*display:inline/*현재 span의 기본. text양식만 영역을 차지해서 100px영향 없음*/
+			/*display:block;한줄씩 띄어쓰기가 되버림*/
+			display:inline-block;/*인라인처럼 옆에 나열되지만 100px 영역을 차지함*/
+		}
+		#html{background-color:#FFE400;}
+		#css{background-color:#B5B2FF; visibility: hidden;}/*hidden하면 공간은 그대로*/
+		#js{background-color:#D9418C;}
+		</style>
+	</head>
+	<body>
+		웹 표준은 <span id="html">HTML</span>구조,
+		<span id="css">CSS</span>디자인,
+		<span id="js">JavaScript</span>동작이 있습니다.
+	</body>
+</html>

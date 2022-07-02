@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+body{
+line-height: 1.6
+}
+		
+		
+			/*tab 만들기*/
+ul.tabs{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+ul.tabs li{
+	background: none;
+	color: #222;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+	font-weight:bold;
+}
+
+ul.tabs li.current{
+	background: #F2EBC5;
+	color: #222;
+	font-weight:bold;
+}
+
+/*탭 안 내용*/
+.tab-content{
+	display: none;
+	background: #F2EBC5;
+	padding: 50px;
+	text-align:center;
+}
+
+.tab-content.current{
+	display: inherit;
+	padding: 50px;
+	text-align:center;
+}
+
+/*영화제목*/
+.movie_name{font-size:1.4em; color:#4A4453; text-shadow: 0 0 5px #FFC8AB;}
